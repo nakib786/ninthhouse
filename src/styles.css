@@ -88,10 +88,10 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-red text-white font-mono uppercase tracking-wider text-xs px-6 py-3 transition-all duration-200 hover:bg-bg-dark;
+    @apply inline-flex items-center justify-center bg-red text-white font-mono uppercase tracking-wider text-xs px-6 py-3 rounded-full transition-all duration-200 hover:bg-bg-dark;
   }
   .btn-outline {
-    @apply inline-flex items-center justify-center border-2 border-red text-red font-mono uppercase tracking-wider text-xs px-6 py-3 transition-all duration-200 hover:bg-red hover:text-white;
+    @apply inline-flex items-center justify-center border-2 border-red text-red font-mono uppercase tracking-wider text-xs px-6 py-3 rounded-full transition-all duration-200 hover:bg-red hover:text-white;
   }
   .label-mono {
     font-family: var(--font-mono);
