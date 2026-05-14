@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ShieldCheck, Award } from "lucide-react";
 import keerti from "@/assets/keerti.png";
 
@@ -14,32 +15,42 @@ export function PortraitFrame() {
         aria-hidden="true"
       />
 
-      {/* Portrait card */}
-      <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-navy shadow-[0_30px_80px_-20px_rgba(13,17,23,0.45)] ring-1 ring-black/5">
+      {/* Floating portrait */}
+      <motion.div
+        className="relative aspect-[4/5]"
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      >
         <img
           src={keerti}
           alt="Keerti Kumar, RCIC-IRB"
-          className="w-full h-full object-scale-down"
+          className="w-full h-full object-scale-down drop-shadow-[0_30px_40px_rgba(13,17,23,0.35)]"
           loading="lazy"
         />
-        {/* Bottom gradient for legibility */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bg-dark/70 to-transparent" />
-      </div>
+      </motion.div>
 
       {/* Floating credential pill — top right */}
-      <div className="absolute -top-3 -right-3 sm:-right-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg flex items-center gap-2 ring-1 ring-black/5">
+      <motion.div
+        className="absolute top-4 -right-2 sm:-right-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 shadow-lg flex items-center gap-2 ring-1 ring-black/5 z-10"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+      >
         <ShieldCheck className="w-4 h-4 text-red" aria-hidden="true" />
         <span className="font-mono text-[10px] tracking-widest uppercase text-bg-dark">RCIC-IRB · L3</span>
-      </div>
+      </motion.div>
 
       {/* Floating stat — bottom left */}
-      <div className="absolute -bottom-5 -left-3 sm:-left-6 bg-bg-dark text-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3">
+      <motion.div
+        className="absolute bottom-6 -left-2 sm:-left-6 bg-bg-dark text-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3 z-10"
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+      >
         <Award className="w-5 h-5 text-gold" aria-hidden="true" />
         <div className="leading-tight">
           <div className="font-display text-xl font-semibold">10+ yrs</div>
           <div className="font-mono text-[9px] tracking-widest uppercase text-white/70">Experience</div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
