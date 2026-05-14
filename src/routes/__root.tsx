@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
+import { WhatsAppBubble } from "@/components/site/WhatsAppBubble";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -104,6 +105,7 @@ function RootComponent() {
         </AnimatePresence>
       </main>
       <Footer />
+      <WhatsAppBubble />
       <Toaster position="top-right" />
     </QueryClientProvider>
   );
