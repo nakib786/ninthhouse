@@ -44,17 +44,33 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-svh flex items-center pt-32 pb-20 overflow-hidden bg-bg">
-        <div className="absolute inset-0 grain" aria-hidden="true" />
-        <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center w-full">
+      <section className="relative min-h-svh flex items-center pt-36 pb-24 overflow-hidden bg-bg">
+        {/* Soft background blobs */}
+        <div
+          className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-30 pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(204,0,0,0.5), transparent 65%)" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute -bottom-40 -right-32 w-[600px] h-[600px] rounded-full blur-3xl opacity-25 pointer-events-none"
+          style={{ background: "radial-gradient(circle, rgba(28,58,110,0.55), transparent 65%)" }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 grain opacity-60" aria-hidden="true" />
+
+        <div className="relative max-w-[1320px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-20 items-center w-full">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex font-mono text-[11px] tracking-widest text-red bg-red-light border-2 border-red px-4 py-2 mb-8"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-bg-dark bg-white/70 backdrop-blur-md border border-black/5 rounded-full pl-2 pr-4 py-1.5 mb-8 shadow-sm"
             >
-              RCIC-IRB LICENSED &nbsp;|&nbsp; KAMLOOPS, BC
+              <span className="inline-flex items-center gap-1.5 bg-red text-white rounded-full px-2.5 py-1 text-[10px]">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                LIVE
+              </span>
+              RCIC-IRB LICENSED · KAMLOOPS, BC
             </motion.div>
 
             <h1 className="font-display font-semibold leading-[1.02] text-[44px] sm:text-6xl lg:text-[88px] tracking-tight">
@@ -81,24 +97,32 @@ function Home() {
               </motion.span>
             </h1>
 
-            <p className="mt-8 text-lg text-text-muted max-w-[520px]">
+            <p className="mt-8 text-lg text-text-muted max-w-[540px] leading-relaxed">
               The Ninth House Immigration Solutions Inc. is a licensed and regulated firm dedicated to clarity, courage, and compassion — guiding families across Canada's immigration journey.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" className="btn-primary">Book Free Consultation</Link>
-              <Link to="/services" className="btn-outline">View Our Services</Link>
+              <Link to="/contact" className="btn-primary !px-7 !py-4 shadow-[0_10px_30px_-8px_rgba(204,0,0,0.5)]">
+                Book Free Consultation
+              </Link>
+              <Link to="/services" className="btn-outline !px-7 !py-4">View Our Services</Link>
             </div>
 
-            <div className="mt-8 flex items-center gap-3 text-sm text-text-muted">
-              <ShieldCheck className="w-4 h-4 text-red flex-shrink-0" aria-hidden="true" />
-              <span>10+ years experience &nbsp;|&nbsp; 200+ families helped &nbsp;|&nbsp; IRB Authorized</span>
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-text-muted">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-red" aria-hidden="true" />
+                <span>IRB Authorized</span>
+              </div>
+              <span className="hidden sm:inline w-px h-4 bg-border" />
+              <span>10+ years</span>
+              <span className="hidden sm:inline w-px h-4 bg-border" />
+              <span>200+ families</span>
             </div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: reduce ? 0 : 60 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: reduce ? 0 : 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="lg:pl-8"
           >
