@@ -105,6 +105,7 @@ function RootComponent() {
         </AnimatePresence>
       </main>
       <Footer />
+      <WhatsAppBubble />
       <Toaster position="top-right" />
     </QueryClientProvider>
   );
