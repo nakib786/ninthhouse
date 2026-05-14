@@ -19,7 +19,7 @@ export function PortraitFrame() {
         <img
           src={keerti}
           alt="Keerti Kumar, RCIC-IRB"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-scale-down"
           loading="lazy"
         />
         {/* Bottom gradient for legibility */}
