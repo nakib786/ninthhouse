@@ -102,7 +102,7 @@ function Services() {
           <Reveal>
             <h2 className="font-display text-4xl md:text-5xl">Not sure which program applies to you?</h2>
             <p className="mt-5 text-white/85 text-lg">Book a free assessment and we'll review your case together.</p>
-            <Link to="/contact" className="mt-8 inline-flex font-mono text-xs uppercase tracking-widest bg-white text-bg-dark px-6 py-3 hover:bg-bg-dark hover:text-white transition-colors">
+            <Link to="/contact" className="mt-8 inline-flex font-mono text-xs uppercase tracking-widest bg-white text-bg-dark px-6 py-3 rounded-full hover:bg-bg-dark hover:text-white transition-colors">
               Book a Free Assessment
             </Link>
           </Reveal>

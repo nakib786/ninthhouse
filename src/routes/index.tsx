@@ -179,7 +179,7 @@ function Home() {
                 <span key={b} className="font-mono text-[11px] tracking-widest uppercase border border-white/30 text-white px-4 py-2">{b}</span>
               ))}
             </div>
-            <Link to="/about" className="mt-10 inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 hover:bg-white hover:text-bg-dark transition-colors">
+            <Link to="/about" className="mt-10 inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-bg-dark transition-colors">
               Learn More About Us
             </Link>
           </Reveal>
