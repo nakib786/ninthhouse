@@ -276,8 +276,8 @@ function Home() {
             <h2 className="font-display text-4xl md:text-6xl">Ready to Start Your Journey?</h2>
             <p className="mt-6 text-lg text-white/85">Book a free consultation with Keerti Kumar, RCIC-IRB. We respond within 24 hours.</p>
             <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Link to="/contact" className="inline-flex font-mono text-xs uppercase tracking-widest bg-white text-bg-dark px-6 py-3 hover:bg-bg-dark hover:text-white transition-colors">Book Free Consultation</Link>
-              <a href="tel:+17789190026" className="inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 hover:bg-white hover:text-red transition-colors">Call +1 (778) 919-0026</a>
+              <Link to="/contact" className="inline-flex font-mono text-xs uppercase tracking-widest bg-white text-bg-dark px-6 py-3 rounded-full hover:bg-bg-dark hover:text-white transition-colors">Book Free Consultation</Link>
+              <a href="tel:+17789190026" className="inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-red transition-colors">Call +1 (778) 919-0026</a>
             </div>
           </Reveal>
         </div>
