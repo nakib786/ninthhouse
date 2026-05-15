@@ -39,9 +39,9 @@ export function PortraitFrame() {
         <span className="font-mono text-[10px] tracking-widest uppercase text-bg-dark">RCIC-IRB · L3</span>
       </motion.div>
 
-      {/* Floating stat — bottom left */}
+      {/* Floating stat — middle left, above name banner */}
       <motion.div
-        className="absolute bottom-6 -left-2 sm:-left-6 bg-bg-dark text-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3 z-10"
+        className="absolute top-1/2 -translate-y-1/2 -left-2 sm:-left-8 bg-bg-dark text-white rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3 z-10"
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
