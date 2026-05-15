@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
 
@@ -96,42 +96,23 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="lg:hidden fixed inset-x-4 top-24 z-[101]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="lg:hidden fixed inset-x-4 top-24 bg-bg-dark rounded-3xl flex flex-col p-8 shadow-2xl"
           >
-            <div className="bg-[#05070A]/95 backdrop-blur-2xl rounded-[32px] border border-white/10 p-8 shadow-2xl overflow-hidden relative">
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-green/20 rounded-full blur-3xl" />
-              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-red/10 rounded-full blur-3xl" />
-              
-              <nav className="flex flex-col gap-6 relative z-10">
-                {links.map((l, i) => (
-                  <motion.div
-                    key={l.to}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    <Link
-                      to={l.to}
-                      className="font-display text-4xl text-white hover:text-green transition-colors flex items-center justify-between group"
-                    >
-                      {l.label}
-                      <ArrowUpRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-                  </motion.div>
-                ))}
-              </nav>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-10 relative z-10"
-              >
-                <Link to="/contact" className="btn-primary !w-full !py-5 text-center">Book a Strategy Session</Link>
-              </motion.div>
-            </div>
+            <nav className="flex flex-col gap-5">
+              {links.map((l) => (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className="font-display text-3xl text-white hover:text-green transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+            <Link to="/contact" className="btn-primary !rounded-full mt-8 w-full text-center">Book a Consultation</Link>
           </motion.div>
         )}
       </AnimatePresence>
