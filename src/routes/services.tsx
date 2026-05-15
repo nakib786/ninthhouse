@@ -46,6 +46,7 @@ function Block({
   iconColor,
   title,
   body,
+  image,
   items,
   centered,
 }: {

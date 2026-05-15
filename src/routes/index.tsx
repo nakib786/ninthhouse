@@ -158,67 +158,101 @@ function Home() {
         </div>
       </section>
 
-      {/* ABOUT KEERTI DARK */}
-      <section className="bg-bg-dark text-white py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 grain opacity-50" aria-hidden="true" />
-        <div className="relative max-w-[1440px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-          <Reveal>
-            <div className="font-mono text-[11px] tracking-widest text-gold uppercase mb-5">About the Consultant</div>
-            <h2 className="font-display text-4xl md:text-5xl">A Decade of Experience.<br /><span className="italic">A Lifetime of Impact.</span></h2>
-            <p className="mt-7 text-lg text-white/80 max-w-2xl leading-relaxed">
-              Keerti Kumar is a Regulated Canadian Immigration Consultant (RCIC-IRB), licensed by the College of Immigration and Citizenship Consultants (CICC) and a proud member of CAPIC. With a Graduate Diploma in Immigration and Citizenship Law from Queen's University, Kingston, he brings 10 years of immigration expertise to every case.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-8">
-              {["CICC Licensed", "CAPIC Member", "Queen's University", "Commissioner for Affidavits, BC"].map((b) => (
-                <span key={b} className="font-mono text-[11px] tracking-widest uppercase border border-white/30 text-white px-4 py-2 flex items-center gap-2">
-                  {b === "CICC Licensed" && <img src="/Licensed.png" alt="" className="w-4 h-4 invert" />}
-                  {b === "CAPIC Member" && <img src="/capic-member.png" alt="" className="w-4 h-4 invert" />}
-                  {b}
-                </span>
-              ))}
-            </div>
-            <Link to="/about" className="mt-10 inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-bg-dark transition-colors">
-              Learn More About Us
-            </Link>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <div className="relative h-[420px]">
-              <div className="absolute inset-0 bg-navy" />
-              <div className="absolute -inset-4 border-2 border-red" />
-              <div className="absolute bottom-6 right-6 font-display text-[140px] leading-none text-white/10">9</div>
-              <div className="absolute top-8 left-8 font-mono text-[11px] tracking-widest text-gold uppercase">Est. 2024</div>
-              <div className="absolute bottom-8 left-8 right-8 font-display italic text-2xl text-white">
-                "Guiding your journey with clarity, courage, and compassion."
+      {/* ABOUT KEERTI - MODERNIZED */}
+      <section className="bg-[#05070A] text-white py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-green/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute inset-0 grain opacity-40" aria-hidden="true" />
+        
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-[1fr_0.8fr] gap-16 items-center">
+            <Reveal>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-6">
+                <Award className="w-3 h-3 text-gold" />
+                <span className="font-mono text-[10px] tracking-widest text-gold uppercase font-bold">Expertise & Integrity</span>
               </div>
-            </div>
-          </Reveal>
+              <h2 className="font-display text-4xl md:text-6xl leading-[1.1] mb-8">
+                A Decade of Experience.<br />
+                <span className="italic text-white/60">A Lifetime of Impact.</span>
+              </h2>
+              <p className="text-xl text-white/70 max-w-2xl leading-relaxed mb-10 font-light">
+                Keerti Kumar is a <span className="text-white font-medium">Regulated Canadian Immigration Consultant (RCIC-IRB)</span>, licensed by the College of Immigration and Citizenship Consultants (CICC). With a Graduate Diploma in Immigration Law from Queen's University, he brings precision and empathy to every case.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  { label: "CICC Licensed", icon: "/Licensed.png" },
+                  { label: "CAPIC Member", icon: "/capic-member.png" },
+                  { label: "Queen's Alumni", icon: null },
+                  { label: "BC Commissioner", icon: null },
+                ].map((b) => (
+                  <div key={b.label} className="flex items-center gap-3 p-4 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors">
+                    {b.icon ? <img src={b.icon} alt="" className="w-5 h-5 invert opacity-70" /> : <ShieldCheck className="w-5 h-5 text-green opacity-70" />}
+                    <span className="font-mono text-[10px] tracking-widest uppercase text-white/80">{b.label}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Link to="/about" className="btn-primary !bg-white !text-bg-dark hover:!bg-green hover:!text-white">
+                Learn More About Our Mission
+              </Link>
+            </Reveal>
+
+            <Reveal delay={0.2}>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-tr from-red/20 via-gold/10 to-green/20 rounded-[32px] blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+                <div className="relative aspect-[4/5] bg-[#0A0F14] border border-white/10 rounded-[32px] overflow-hidden p-10 flex flex-col justify-end">
+                  <div className="absolute top-10 left-10">
+                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-gold font-mono text-sm">
+                      09
+                    </div>
+                  </div>
+                  <div className="absolute top-10 right-10 opacity-5">
+                    <img src={logo} alt="" className="w-48 h-48 grayscale invert" />
+                  </div>
+                  
+                  <div className="relative z-10">
+                    <p className="font-display italic text-3xl md:text-4xl text-white leading-tight mb-6">
+                      "Guiding your journey with clarity, courage, and compassion."
+                    </p>
+                    <div className="h-px w-20 bg-gradient-to-r from-red to-transparent mb-4" />
+                    <p className="font-mono text-[11px] tracking-[0.3em] text-white/40 uppercase">The Ninth House Vision</p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* FULL SERVICES TEASER */}
-      <section className="bg-navy-light py-24 md:py-32">
+      {/* FULL SERVICES - MODERNIZED */}
+      <section className="bg-bg py-24 md:py-36 relative">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <Reveal>
-            <div className="text-center max-w-2xl mx-auto">
-              <img src="/Services.png" alt="" className="w-16 h-16 mx-auto mb-6 object-contain" />
-              <h2 className="font-display text-4xl md:text-5xl">Our Full Range of Services</h2>
-              <p className="mt-5 text-text-muted text-lg">We handle every stage of your immigration journey.</p>
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <div className="w-16 h-16 rounded-3xl bg-green/10 flex items-center justify-center mx-auto mb-8 border border-green/20">
+                <Briefcase className="w-8 h-8 text-green" />
+              </div>
+              <h2 className="font-display text-4xl md:text-6xl mb-6 tracking-tight">Our Full Range of Services</h2>
+              <p className="text-xl text-text-muted font-light leading-relaxed">
+                Comprehensive representation across all divisions of Canadian immigration law.
+              </p>
             </div>
           </Reveal>
 
-          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {fullServices.map((col, i) => (
-              <Reveal key={col.title} delay={i * 0.06}>
-                <div>
-                  <h3 className="font-mono text-[12px] tracking-widest text-green uppercase mb-5 pb-3 border-b border-green/30">{col.title}</h3>
-                  <ul className="space-y-3 text-[15px] text-bg-dark">
+              <Reveal key={col.title} delay={i * 0.05}>
+                <div className="p-8 rounded-[32px] bg-white border border-black/[0.04] hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
+                  <h3 className="font-mono text-[10px] tracking-[0.2em] text-green uppercase font-bold mb-8 flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green" />
+                    {col.title}
+                  </h3>
+                  <ul className="space-y-4 flex-grow">
                     {col.items.map((it) => (
-                      <li key={it} className="leading-snug flex items-center gap-2">
-                        <span>- {it}</span>
-                        {(it.toLowerCase().includes("work") || it.toLowerCase().includes("lmia")) && (
-                          <img src="/work.png" alt="" className="w-4 h-4 object-contain opacity-50" />
-                        )}
+                      <li key={it} className="text-[15px] text-text-muted flex items-start gap-3 group/item">
+                        <ArrowRight className="w-3.5 h-3.5 mt-1 text-black/20 group-hover/item:text-red transition-colors" />
+                        <span className="group-hover/item:text-text transition-colors">{it}</span>
                       </li>
                     ))}
                   </ul>
@@ -227,65 +261,135 @@ function Home() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <Link to="/contact" className="btn-primary">Book a Free Consultation</Link>
+          <div className="mt-20 text-center">
+            <Link to="/contact" className="btn-primary">
+              Book a Strategy Session
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIAL */}
-      <section className="bg-bg py-24 md:py-32">
-        <div className="max-w-3xl mx-auto px-6 text-center relative">
-          <div className="font-display text-red leading-none select-none" style={{ fontSize: 140 }}>"</div>
+      {/* TESTIMONIAL - MODERNIZED */}
+      <section className="bg-bg py-24 relative overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+          <span className="font-display text-[400px] leading-none select-none italic text-black">9</span>
+        </div>
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <Reveal>
-            <p className="font-display italic text-2xl md:text-3xl leading-snug -mt-12">
-              Keerti and his team guided us through our refugee appeal with professionalism and genuine care. We had our permanent residency within a year. We cannot thank The Ninth House enough.
-            </p>
-            <div className="flex justify-center gap-1 mt-8">
-              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="w-4 h-4 fill-gold text-gold" aria-hidden="true" />)}
+            <div className="flex justify-center gap-1 mb-8">
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="w-5 h-5 fill-gold text-gold" aria-hidden="true" />)}
             </div>
-            <div className="mt-5 font-mono text-[12px] tracking-widest uppercase text-text-muted">- Harpreet S., Permanent Resident | Kamloops, BC</div>
+            <p className="font-display italic text-3xl md:text-5xl leading-tight mb-12 text-bg-dark">
+              "Keerti and his team guided us through our refugee appeal with professionalism and genuine care. We had our permanent residency within a year."
+            </p>
+            <div className="inline-block py-3 px-6 rounded-full bg-white border border-black/5 shadow-sm">
+              <span className="font-mono text-[11px] tracking-widest uppercase text-text-muted">- Harpreet S. | Kamloops, BC</span>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* WHY CHOOSE US DARK */}
-      <section className="bg-bg-dark text-white py-24 md:py-32">
+      {/* WHY CHOOSE US - BENTO GRID REDESIGN */}
+      <section className="bg-bg py-24 md:py-36">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <Reveal>
-            <h2 className="font-display text-4xl md:text-5xl text-center">Why Families Trust The Ninth House</h2>
+            <div className="max-w-3xl mb-20">
+               <div className="font-mono text-[11px] tracking-widest text-red uppercase font-bold mb-4">The Ninth House Edge</div>
+               <h2 className="font-display text-4xl md:text-7xl tracking-tight">Why Families Trust Us</h2>
+            </div>
           </Reveal>
-          <div className="mt-16 grid md:grid-cols-3 gap-6">
-            {[
-              { image: "/Licensed.png", title: "Licensed & Regulated", body: "Led by Keerti Kumar, RCIC-IRB Class L3, authorized before all IRB divisions." },
-              { image: "/support.png", title: "Full-Service Support", body: "From refugee appeals to family sponsorships - one firm handles it all." },
-              { image: "/Professional.png", title: "Ethical & Transparent", body: "We uphold the highest standards of professionalism, always placing integrity first." },
-            ].map(({ image, title, body }, i) => (
-              <Reveal key={title} delay={i * 0.06}>
-                <div className="bg-navy p-10 h-full group hover:bg-navy-light transition-colors">
-                  <div className="h-12 w-12 mb-6">
-                    <img src={image} alt="" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform invert" />
-                  </div>
-                  <h3 className="font-display text-2xl">{title}</h3>
-                  <p className="mt-3 text-white/70 text-[15px] leading-relaxed">{body}</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <Reveal className="md:col-span-8 h-full">
+              <div className="bg-[#0A0F14] rounded-[40px] p-12 text-white h-full relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform duration-1000">
+                  <ShieldCheck className="w-64 h-64" />
                 </div>
-              </Reveal>
-            ))}
+                <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-display text-4xl md:text-5xl mb-6">Licensed & Regulated Expertise</h3>
+                    <p className="text-xl text-white/70 max-w-xl leading-relaxed">
+                      Led by Keerti Kumar, RCIC-IRB Class L3, we are authorized to represent cases before all four divisions of the Immigration and Refugee Board (IRB).
+                    </p>
+                  </div>
+                  <div className="mt-12 flex gap-4">
+                    <div className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] tracking-widest uppercase">Verified License</div>
+                    <div className="px-6 py-3 rounded-full bg-white/5 border border-white/10 font-mono text-[10px] tracking-widest uppercase">CICC Member</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal className="md:col-span-4" delay={0.1}>
+              <div className="bg-red rounded-[40px] p-12 text-white h-full flex flex-col justify-between hover:bg-bg-dark transition-colors duration-500 group">
+                <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8">
+                  <Heart className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-display text-3xl mb-4 leading-tight">Ethical & Transparent</h3>
+                  <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors">
+                    We uphold the highest standards of professionalism, always placing integrity and your future first.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+            
+            <Reveal className="md:col-span-4" delay={0.2}>
+              <div className="bg-yellow rounded-[40px] p-12 h-full flex flex-col justify-between hover:bg-green hover:text-white transition-all duration-500 group">
+                 <div className="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center mb-8 group-hover:bg-white/10">
+                  <Users className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="font-display text-3xl mb-4 leading-tight">Full-Service Support</h3>
+                  <p className="text-black/60 leading-relaxed group-hover:text-white transition-colors">
+                    From refugee appeals to family sponsorships - one firm handles it all with dedicated care.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal className="md:col-span-8" delay={0.3}>
+              <div className="bg-navy-light rounded-[40px] p-12 h-full relative group overflow-hidden">
+                <div className="flex flex-col md:flex-row items-center gap-10 h-full">
+                  <div className="flex-grow">
+                    <h3 className="font-display text-3xl md:text-4xl mb-4">A Local Partner with Global Vision</h3>
+                    <p className="text-text-muted leading-relaxed text-lg">
+                      Based in Kamloops, BC, we serve clients locally and internationally, bringing the same level of commitment to every time zone.
+                    </p>
+                  </div>
+                  <div className="w-full md:w-48 aspect-square rounded-3xl bg-white border border-black/5 flex items-center justify-center p-8 group-hover:rotate-12 transition-transform duration-700">
+                    <img src={logo} alt="" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="bg-red text-white py-28 md:py-32">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <Reveal>
-            <h2 className="font-display text-4xl md:text-6xl">Ready to Start Your Journey?</h2>
-            <p className="mt-6 text-lg text-white/85">Book a free consultation with Keerti Kumar, RCIC-IRB. We respond within 24 hours.</p>
-            <div className="mt-10 flex flex-wrap gap-4 justify-center">
-              <Link to="/contact" className="inline-flex font-mono text-xs uppercase tracking-widest bg-white text-bg-dark px-6 py-3 rounded-full hover:bg-bg-dark hover:text-white transition-colors">Book Free Consultation</Link>
-              <a href="tel:+17789190026" className="inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-red transition-colors">Call +1 (778) 919-0026</a>
-            </div>
-          </Reveal>
+      {/* CTA BANNER - MODERNIZED */}
+      <section className="bg-bg py-12 md:py-24">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10">
+          <div className="bg-red rounded-[48px] p-12 md:p-24 text-white text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full grain opacity-20 pointer-events-none" />
+            <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-[80px]" />
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-black/10 rounded-full blur-[80px]" />
+            
+            <Reveal>
+              <h2 className="font-display text-4xl md:text-7xl mb-8 tracking-tight">Ready to Start Your Journey?</h2>
+              <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mb-12 font-light">
+                Book a free consultation with Keerti Kumar, RCIC-IRB. We respond within 24 hours.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/contact" className="px-10 py-5 rounded-full bg-white text-red font-mono text-[11px] tracking-widest uppercase font-bold hover:bg-bg-dark hover:text-white transition-all shadow-xl hover:shadow-2xl">
+                  Book Free Consultation
+                </Link>
+                <a href="tel:+17789190026" className="px-10 py-5 rounded-full bg-transparent border-2 border-white text-white font-mono text-[11px] tracking-widest uppercase font-bold hover:bg-white hover:text-red transition-all">
+                  Call +1 (778) 919-0026
+                </a>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>
