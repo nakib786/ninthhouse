@@ -94,17 +94,6 @@ function Home() {
               </Link>
               <Link to="/services" className="btn-outline !px-7 !py-4">View Our Services</Link>
             </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-text-muted">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-red" aria-hidden="true" />
-                <span>IRB Authorized</span>
-              </div>
-              <span className="hidden sm:inline w-px h-4 bg-border" />
-              <span>10+ years</span>
-              <span className="hidden sm:inline w-px h-4 bg-border" />
-              <span>200+ families</span>
-            </div>
           </div>
 
           <motion.div
