@@ -60,19 +60,6 @@ function Home() {
 
         <div className="relative max-w-[1320px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-20 items-center w-full">
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="inline-flex items-center gap-2 font-mono text-[11px] tracking-widest text-bg-dark bg-white/70 backdrop-blur-md border border-black/5 rounded-full pl-2 pr-4 py-1.5 mb-8 shadow-sm"
-            >
-              <span className="inline-flex items-center gap-1.5 bg-red text-white rounded-full px-2.5 py-1 text-[10px]">
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                LIVE
-              </span>
-              RCIC-IRB LICENSED · KAMLOOPS, BC
-            </motion.div>
-
             <h1 className="font-display font-semibold leading-[1.02] text-[44px] sm:text-6xl lg:text-[88px] tracking-tight">
               <span className="block">
                 {headlineWords.map((w, i) => (
