@@ -44,9 +44,9 @@ export function Navbar() {
       >
         <Link to="/" className="flex items-center gap-3 pl-1">
           <img src={logo} alt="The Ninth House Immigration" className="h-10 w-10 object-contain" width={40} height={40} />
-          <div className="hidden sm:block leading-none">
-            <div className="font-display text-[15px] font-semibold text-bg-dark">THE NINTH HOUSE</div>
-            <div className="font-mono text-[8px] tracking-[0.18em] text-text-muted mt-1">IMMIGRATION SOLUTIONS INC.</div>
+          <div className="block leading-none">
+            <div className="font-display text-[13px] sm:text-[15px] font-semibold text-bg-dark whitespace-nowrap">THE NINTH HOUSE</div>
+            <div className="hidden sm:block font-mono text-[8px] tracking-[0.18em] text-text-muted mt-1">IMMIGRATION SOLUTIONS INC.</div>
           </div>
         </Link>
 
