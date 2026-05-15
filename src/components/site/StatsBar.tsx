@@ -10,8 +10,9 @@ const stats = [
 export function StatsBar() {
   const reduce = useReducedMotion();
   return (
-    <section className="bg-red text-white">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-16 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/30">
+    <section className="bg-gradient-to-r from-red via-red to-green text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+      <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-16 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/20">
         {stats.map((s, i) => (
           <motion.div
             key={s.label}
@@ -22,7 +23,7 @@ export function StatsBar() {
             className="px-6 text-center"
           >
             <div className="font-display text-5xl md:text-6xl font-semibold">{s.value}</div>
-            <div className="font-mono text-[10px] md:text-[11px] tracking-widest uppercase mt-2 text-white/90">{s.label}</div>
+            <div className="font-mono text-[10px] md:text-[11px] tracking-widest uppercase mt-2 text-yellow/90">{s.label}</div>
           </motion.div>
         ))}
       </div>

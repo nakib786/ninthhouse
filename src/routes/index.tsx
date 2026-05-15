@@ -14,10 +14,10 @@ export const Route = createFileRoute("/")({
 const headlineWords = ["Your", "Canadian", "Future"];
 
 const services = [
-  { Icon: Award, title: "Express Entry & PNP", body: "Permanent residency pathways for skilled workers." },
-  { Icon: Users, title: "Family Sponsorship", body: "Reunite with your spouse, children, and parents." },
-  { Icon: ShieldCheck, title: "IRB Representation", body: "Authorized before all four IRB divisions." },
-  { Icon: Briefcase, title: "Work & Study Permits", body: "PGWP, LMIA, open permits, and extensions." },
+  { image: "/Passport.png", title: "Express Entry & PNP", body: "Permanent residency pathways for skilled workers." },
+  { image: "/family.png", title: "Family Sponsorship", body: "Reunite with your spouse, children, and parents." },
+  { image: "/Lawyer.png", title: "IRB Representation", body: "Authorized before all four IRB divisions." },
+  { image: "/workPermit.png", title: "Work & Study Permits", body: "PGWP, LMIA, open permits, and extensions." },
 ];
 
 const fullServices = [
@@ -47,16 +47,32 @@ function Home() {
       <section className="relative min-h-svh flex items-center pt-36 pb-24 overflow-hidden bg-bg">
         {/* Soft background blobs */}
         <div
-          className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-30 pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(204,0,0,0.5), transparent 65%)" }}
+          className="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, var(--green), transparent 65%)" }}
           aria-hidden="true"
         />
         <div
           className="absolute -bottom-40 -right-32 w-[600px] h-[600px] rounded-full blur-3xl opacity-25 pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(28,58,110,0.55), transparent 65%)" }}
+          style={{ background: "radial-gradient(circle, var(--yellow), transparent 65%)" }}
           aria-hidden="true"
         />
         <div className="absolute inset-0 grain opacity-60" aria-hidden="true" />
+
+        {/* Decorative Floating Icons */}
+        <motion.img
+          src="/Canada.png"
+          alt=""
+          className="absolute top-1/4 -left-10 w-32 h-32 opacity-10 blur-[1px] select-none pointer-events-none hidden lg:block"
+          animate={{ y: [0, 20, 0], rotate: [0, 5, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.img
+          src="/BoardingPass.png"
+          alt=""
+          className="absolute bottom-1/4 right-1/3 w-24 h-24 opacity-10 blur-[2px] select-none pointer-events-none hidden lg:block"
+          animate={{ y: [0, -15, 0], rotate: [0, -10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
 
         <div className="relative max-w-[1320px] mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-16 lg:gap-20 items-center w-full">
           <div>
@@ -78,7 +94,7 @@ function Home() {
                 initial={{ opacity: 0, y: reduce ? 0 : 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="block italic text-red"
+                className="block italic text-green"
               >
                 Starts Here.
               </motion.span>
@@ -113,7 +129,7 @@ function Home() {
       <section className="bg-bg py-24 md:py-32">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <Reveal>
-            <div className="font-mono text-[11px] tracking-widest text-red uppercase mb-4">Our Practice</div>
+            <div className="font-mono text-[11px] tracking-widest text-green uppercase mb-4">Our Practice</div>
             <h2 className="font-display text-4xl md:text-6xl max-w-3xl">How We Can Help</h2>
             <p className="mt-5 text-lg text-text-muted max-w-2xl">
               Full-service immigration consulting — from permanent residency to refugee representation.
@@ -121,10 +137,12 @@ function Home() {
           </Reveal>
 
           <div className="mt-16 grid sm:grid-cols-2 gap-6">
-            {services.map(({ Icon, title, body }, i) => (
+            {services.map(({ image, title, body }, i) => (
               <Reveal key={title} delay={i * 0.05}>
                 <div className="group bg-white border border-[#E0E0E0] p-9 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] hover:border-l-[3px] hover:border-l-red h-full">
-                  <Icon className="w-8 h-8 text-red mb-6" aria-hidden="true" />
+                  <div className="mb-6 h-12 w-12 flex items-center justify-center">
+                    <img src={image} alt="" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300" />
+                  </div>
                   <h3 className="font-display text-2xl font-semibold">{title}</h3>
                   <p className="mt-3 text-[15px] text-text-muted">{body}</p>
                 </div>
@@ -152,7 +170,11 @@ function Home() {
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               {["CICC Licensed", "CAPIC Member", "Queen's University", "Commissioner for Affidavits, BC"].map((b) => (
-                <span key={b} className="font-mono text-[11px] tracking-widest uppercase border border-white/30 text-white px-4 py-2">{b}</span>
+                <span key={b} className="font-mono text-[11px] tracking-widest uppercase border border-white/30 text-white px-4 py-2 flex items-center gap-2">
+                  {b === "CICC Licensed" && <img src="/Licensed.png" alt="" className="w-4 h-4 invert" />}
+                  {b === "CAPIC Member" && <img src="/capic-member.png" alt="" className="w-4 h-4 invert" />}
+                  {b}
+                </span>
               ))}
             </div>
             <Link to="/about" className="mt-10 inline-flex font-mono text-xs uppercase tracking-widest border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-bg-dark transition-colors">
@@ -179,6 +201,7 @@ function Home() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-10">
           <Reveal>
             <div className="text-center max-w-2xl mx-auto">
+              <img src="/Services.png" alt="" className="w-16 h-16 mx-auto mb-6 object-contain" />
               <h2 className="font-display text-4xl md:text-5xl">Our Full Range of Services</h2>
               <p className="mt-5 text-text-muted text-lg">We handle every stage of your immigration journey.</p>
             </div>
@@ -188,10 +211,15 @@ function Home() {
             {fullServices.map((col, i) => (
               <Reveal key={col.title} delay={i * 0.06}>
                 <div>
-                  <h3 className="font-mono text-[12px] tracking-widest text-red uppercase mb-5 pb-3 border-b border-red/30">{col.title}</h3>
+                  <h3 className="font-mono text-[12px] tracking-widest text-green uppercase mb-5 pb-3 border-b border-green/30">{col.title}</h3>
                   <ul className="space-y-3 text-[15px] text-bg-dark">
                     {col.items.map((it) => (
-                      <li key={it} className="leading-snug">— {it}</li>
+                      <li key={it} className="leading-snug flex items-center gap-2">
+                        <span>- {it}</span>
+                        {(it.toLowerCase().includes("work") || it.toLowerCase().includes("lmia")) && (
+                          <img src="/work.png" alt="" className="w-4 h-4 object-contain opacity-50" />
+                        )}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -216,7 +244,7 @@ function Home() {
             <div className="flex justify-center gap-1 mt-8">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="w-4 h-4 fill-gold text-gold" aria-hidden="true" />)}
             </div>
-            <div className="mt-5 font-mono text-[12px] tracking-widest uppercase text-text-muted">— Harpreet S., Permanent Resident | Kamloops, BC</div>
+            <div className="mt-5 font-mono text-[12px] tracking-widest uppercase text-text-muted">- Harpreet S., Permanent Resident | Kamloops, BC</div>
           </Reveal>
         </div>
       </section>
@@ -229,13 +257,15 @@ function Home() {
           </Reveal>
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             {[
-              { Icon: ShieldCheck, color: "text-red", title: "Licensed & Regulated", body: "Led by Keerti Kumar, RCIC-IRB Class L3, authorized before all IRB divisions." },
-              { Icon: Users, color: "text-gold", title: "Full-Service Support", body: "From refugee appeals to family sponsorships — one firm handles it all." },
-              { Icon: Heart, color: "text-red", title: "Ethical & Transparent", body: "We uphold the highest standards of professionalism, always placing integrity first." },
-            ].map(({ Icon, color, title, body }, i) => (
+              { image: "/Licensed.png", title: "Licensed & Regulated", body: "Led by Keerti Kumar, RCIC-IRB Class L3, authorized before all IRB divisions." },
+              { image: "/support.png", title: "Full-Service Support", body: "From refugee appeals to family sponsorships - one firm handles it all." },
+              { image: "/Professional.png", title: "Ethical & Transparent", body: "We uphold the highest standards of professionalism, always placing integrity first." },
+            ].map(({ image, title, body }, i) => (
               <Reveal key={title} delay={i * 0.06}>
-                <div className="bg-navy p-10 h-full">
-                  <Icon className={`w-9 h-9 ${color} mb-6`} aria-hidden="true" />
+                <div className="bg-navy p-10 h-full group hover:bg-navy-light transition-colors">
+                  <div className="h-12 w-12 mb-6">
+                    <img src={image} alt="" className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform invert" />
+                  </div>
                   <h3 className="font-display text-2xl">{title}</h3>
                   <p className="mt-3 text-white/70 text-[15px] leading-relaxed">{body}</p>
                 </div>

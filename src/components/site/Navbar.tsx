@@ -58,18 +58,18 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 className={`relative font-body text-[12px] uppercase tracking-[0.14em] px-4 py-2 rounded-full transition-colors duration-200 ${
-                  active ? "text-red" : "text-bg-dark/80 hover:text-red"
+                  active ? "text-green" : "text-bg-dark/80 hover:text-green"
                 }`}
               >
                 {active && (
                   <motion.span
                     layoutId="nav-tubelight"
-                    className="absolute inset-0 -z-10 rounded-full bg-red/10"
+                    className="absolute inset-0 -z-10 rounded-full bg-green/10"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   >
-                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 h-1 w-8 bg-red rounded-full">
-                      <span className="absolute -top-1 -left-2 h-3 w-12 bg-red/40 rounded-full blur-md" />
-                      <span className="absolute -top-2 left-0 h-4 w-8 bg-red/30 rounded-full blur-lg" />
+                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 h-1 w-8 bg-green rounded-full">
+                      <span className="absolute -top-1 -left-2 h-3 w-12 bg-green/40 rounded-full blur-md" />
+                      <span className="absolute -top-2 left-0 h-4 w-8 bg-green/30 rounded-full blur-lg" />
                     </span>
                   </motion.span>
                 )}
@@ -106,7 +106,7 @@ export function Navbar() {
                 <Link
                   key={l.to}
                   to={l.to}
-                  className="font-display text-3xl text-white hover:text-red transition-colors"
+                  className="font-display text-3xl text-white hover:text-green transition-colors"
                 >
                   {l.label}
                 </Link>

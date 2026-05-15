@@ -54,12 +54,20 @@ function Block({
   iconColor: string;
   title: string;
   body?: string;
+  image?: string;
   items: string[];
   centered?: boolean;
 }) {
   return (
-    <section className={`${bg} ${text} py-24 md:py-28`}>
-      <div className={`max-w-[1100px] mx-auto px-6 md:px-10 ${centered ? "text-center" : ""}`}>
+    <section className={`${bg} ${text} py-24 md:py-28 relative overflow-hidden`}>
+      {image && (
+        <img
+          src={image}
+          alt=""
+          className="absolute -right-20 -bottom-20 w-80 h-80 opacity-5 blur-[2px] select-none pointer-events-none"
+        />
+      )}
+      <div className={`relative max-w-[1100px] mx-auto px-6 md:px-10 ${centered ? "text-center" : ""}`}>
         <Reveal>
           <h2 className="font-display text-3xl md:text-5xl">{title}</h2>
           {body && <p className={`mt-6 text-lg ${text === "text-white" ? "text-white/80" : "text-text-muted"} max-w-3xl ${centered ? "mx-auto" : ""}`}>{body}</p>}
@@ -92,12 +100,12 @@ function Services() {
         </div>
       </section>
 
-      <Block bg="bg-bg-dark" text="text-white" iconColor="text-red" title="Authorized Representation Before the IRB" body="As an RCIC-IRB Class L3 consultant, Keerti Kumar is one of the few regulated consultants in Canada authorized to represent clients before all four IRB divisions." items={irb} />
-      <Block bg="bg-bg" text="text-bg-dark" iconColor="text-red" title="Immigration Applications" items={apps} />
-      <Block bg="bg-navy-light" text="text-bg-dark" iconColor="text-red" title="Status & Compliance Support" items={status} />
-      <Block bg="bg-navy" text="text-white" iconColor="text-gold" title="Specialized Services" body="These cases require deep expertise and careful strategy. Keerti Kumar has the credentials and experience to handle Canada's most complex immigration situations." items={specialized} centered />
+      <Block bg="bg-bg-dark" text="text-white" iconColor="text-green" title="Authorized Representation Before the IRB" body="As an RCIC-IRB Class L3 consultant, Keerti Kumar is one of the few regulated consultants in Canada authorized to represent clients before all four IRB divisions." items={irb} image="/Lawyer.png" />
+      <Block bg="bg-bg" text="text-bg-dark" iconColor="text-green" title="Immigration Applications" items={apps} image="/immigration.png" />
+      <Block bg="bg-navy-light" text="text-bg-dark" iconColor="text-yellow" title="Status & Compliance Support" items={status} image="/Canada.png" />
+      <Block bg="bg-navy" text="text-white" iconColor="text-yellow" title="Specialized Services" body="These cases require deep expertise and careful strategy. Keerti Kumar has the credentials and experience to handle Canada's most complex immigration situations." items={specialized} image="/BoardingPass.png" centered />
 
-      <section className="bg-red text-white py-24">
+      <section className="bg-green text-white py-24">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <Reveal>
             <h2 className="font-display text-4xl md:text-5xl">Not sure which program applies to you?</h2>

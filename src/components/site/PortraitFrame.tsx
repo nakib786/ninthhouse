@@ -10,7 +10,7 @@ export function PortraitFrame() {
         className="absolute -inset-10 rounded-full blur-3xl opacity-40 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 30% 30%, rgba(204,0,0,0.35), transparent 60%), radial-gradient(circle at 70% 70%, rgba(28,58,110,0.4), transparent 60%)",
+            "radial-gradient(circle at 30% 30%, var(--green), transparent 60%), radial-gradient(circle at 70% 70%, var(--yellow), transparent 60%)",
         }}
         aria-hidden="true"
       />
@@ -35,7 +35,7 @@ export function PortraitFrame() {
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
       >
-        <ShieldCheck className="w-4 h-4 text-red" aria-hidden="true" />
+        <ShieldCheck className="w-4 h-4 text-green" aria-hidden="true" />
         <span className="font-mono text-[10px] tracking-widest uppercase text-bg-dark">RCIC-IRB · L3</span>
       </motion.div>
 
@@ -45,11 +45,20 @@ export function PortraitFrame() {
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        <Award className="w-5 h-5 text-gold" aria-hidden="true" />
+        <Award className="w-5 h-5 text-yellow" aria-hidden="true" />
         <div className="leading-tight">
           <div className="font-display text-xl font-semibold">10+ yrs</div>
           <div className="font-mono text-[9px] tracking-widest uppercase text-white/70">Experience</div>
         </div>
+      </motion.div>
+
+      {/* Floating Flag — bottom right */}
+      <motion.div
+        className="absolute -bottom-6 -right-6 w-20 h-20 z-10 hidden sm:block"
+        animate={{ y: [0, 8, 0], rotate: [0, -5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      >
+        <img src="/Canada.png" alt="" className="w-full h-full object-contain drop-shadow-lg opacity-40 hover:opacity-100 transition-opacity" />
       </motion.div>
     </div>
   );

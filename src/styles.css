@@ -20,6 +20,8 @@
   --color-navy: var(--navy);
   --color-navy-light: var(--navy-light);
   --color-gold: var(--gold);
+  --color-green: var(--green);
+  --color-yellow: var(--yellow);
 
   --color-background: var(--bg);
   --color-foreground: var(--text);
@@ -56,6 +58,8 @@
   --navy: #1C3A6E;
   --navy-light: #E8EEF5;
   --gold: #F5A623;
+  --green: #107C41;
+  --yellow: #FFD700;
   --radius: 0px;
 }
 

@@ -35,7 +35,7 @@ export function Footer() {
             </p>
             <div className="flex gap-4 mt-6">
               {social.map(({ Icon, label, href }) => (
-                <a key={label} href={href} aria-label={label} className="text-white hover:text-red transition-colors">
+                <a key={label} href={href} aria-label={label} className="text-white hover:text-green transition-colors">
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-mono text-[11px] tracking-widest text-gold uppercase mb-5">Quick Links</h3>
+            <h3 className="font-mono text-[11px] tracking-widest text-green uppercase mb-5">Quick Links</h3>
             <ul className="space-y-3">
               {[
                 ["Home", "/"],
@@ -54,18 +54,18 @@ export function Footer() {
                 ["Contact", "/contact"],
               ].map(([label, to]) => (
                 <li key={to}>
-                  <Link to={to} className="text-sm text-white hover:text-red transition-colors">{label}</Link>
+                  <Link to={to} className="text-sm text-white hover:text-green transition-colors">{label}</Link>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="font-mono text-[11px] tracking-widest text-gold uppercase mb-5">Get In Touch</h3>
+            <h3 className="font-mono text-[11px] tracking-widest text-yellow uppercase mb-5">Get In Touch</h3>
             <ul className="space-y-4 text-sm">
-              <li className="flex gap-3"><MapPin className="w-4 h-4 text-red flex-shrink-0 mt-1" aria-hidden="true" />306 Waddington Dr., Kamloops, BC, V2E 1P8</li>
-              <li className="flex gap-3"><Phone className="w-4 h-4 text-red flex-shrink-0 mt-1" aria-hidden="true" /><a href="tel:+17789190026" className="hover:text-red">+1 (778) 919-0026</a></li>
-              <li className="flex gap-3"><Mail className="w-4 h-4 text-red flex-shrink-0 mt-1" aria-hidden="true" /><a href="mailto:info@theninthhouseimmigration.com" className="hover:text-red break-all">info@theninthhouseimmigration.com</a></li>
+               <li className="flex gap-3"><MapPin className="w-4 h-4 text-green flex-shrink-0 mt-1" aria-hidden="true" />306 Waddington Dr., Kamloops, BC, V2E 1P8</li>
+               <li className="flex gap-3"><Phone className="w-4 h-4 text-yellow flex-shrink-0 mt-1" aria-hidden="true" /><a href="tel:+17789190026" className="hover:text-green">+1 (778) 919-0026</a></li>
+               <li className="flex gap-3"><Mail className="w-4 h-4 text-red flex-shrink-0 mt-1" aria-hidden="true" /><a href="mailto:info@theninthhouseimmigration.com" className="hover:text-red break-all">info@theninthhouseimmigration.com</a></li>
             </ul>
           </div>
         </div>
